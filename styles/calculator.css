@@ -40,7 +40,7 @@
         width: 25rem;
         margin: 1rem;
         display: flex;
-        justify-content: center;
+        justify-content: end;
         align-items: center;
         flex-wrap: wrap;
       }
