@@ -1,0 +1,93 @@
+.weather-box{
+        grid-row: 1;
+        grid-column-start: 1;
+        grid-column-end: 4;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      /* Day Time and Date styling  */
+      .date-box {
+        padding: 2% 5% 2% 5%;
+        color: black;
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+      }
+      .day{
+        font-family: "Michroma", sans-serif;
+        font-weight: 200;
+        font-style: normal;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+      .time{
+        font-family: "Bungee", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 2.5rem;
+      }
+      .date{
+        font-family: "Bungee", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.5rem;
+      }
+      
+      /* Weather section styling  */
+      .weather{
+        color: black;
+        display: flex;
+        justify-content: space-between;
+        margin-right: 2rem;
+      }
+      .div-1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+      }
+      .div-2{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        padding: 1rem;
+      }
+      .div-1 .condition{
+        font-size: 1.5rem;
+        margin-top: 1rem;
+        font-family: "Bungee", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .weather-image{
+        height: 12rem;
+        width: 12rem;
+      }
+      .temperature{
+        font-family: "Michroma", sans-serif;
+        font-weight: 200;
+        font-style: normal;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+      .location{
+        font-size: 2.5rem;
+        font-family: "Bungee", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .humidity{
+        font-family: "Bungee", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.5rem;
+      }
+      .aqi{
+        font-family: "Bungee", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.5rem;
+      }

@@ -1,0 +1,73 @@
+ *{
+        margin: 0;
+        padding: 0;
+  }
+  body,html{
+        font-size: 16px;
+        box-sizing: border-box;
+        height: 100vh;
+        width: 100vw;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+  }     
+
+/* Header styling  */
+
+      .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem;
+      }
+      .header h1,h2{
+       margin: 2%;
+      }
+      .header h2{
+       cursor: pointer;
+      }
+      
+/*  Main section styling  */
+
+      .main-section{
+        height: 120%;
+        width: 100%;
+        display: grid;
+        grid-template-rows: 1fr 2fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2%;
+        padding-bottom: 5rem;
+        
+      }
+      
+ /*  Footer styling  */
+      footer{
+        text-align: center;
+        padding: 1%;
+        font-size: 2rem;
+
+      }
+      footer a{
+        text-decoration: none;
+        font-size: 2rem;
+      }
+      footer a i{
+        padding-top: 1.5rem;
+      }
+      footer a i:hover{
+        transform: scale(1.2);
+        transition: all 0.5s ease-in-out;
+      }
+      footer .github{
+        color: black;
+      }
+       footer .insta{
+        color: rgb(249, 9, 9);
+      }
+      footer .linkedin{
+        color: blue;
+      }
+      footer p{
+        font-size: 1rem;
+        margin: 1rem;
+      }
