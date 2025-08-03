@@ -1,0 +1,223 @@
+.expense-tracker-box{
+        /* background-color: rgb(236, 30, 222); */
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        place-items: center;
+        place-content: center;
+        box-sizing: border-box;
+       
+      }
+.expense-container{
+        width: 70%;
+        min-width: 244px;
+        height: 80%;
+        padding: 3rem;
+        background-color: rgb(231, 170, 96);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid black;
+        border-radius: 2rem;
+}
+.total-expense{
+    height: 4rem;
+    width: 25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #646161;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+}
+.total-expense h1{
+    font-size: 1.8rem;
+    font-family: "Michroma", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.total-expense .money{
+    font-size: 1.8rem;
+    font-family: "Michroma", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 0.5rem;
+    background-color: blue;
+    border-radius: 0.75rem;
+    color: #fff;
+}
+.input-expense{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+#expense-form{
+    margin-top: 0.75rem;
+}
+#expense-form input{
+    height: 2.5rem;
+    width: 15rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    margin: 0.75rem;
+}
+.expense-add{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: green;
+    color: #fff;
+    height: 3rem;
+    width: 12rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem 1rem 1rem;
+    font-size: 1rem;
+    margin: 0.5rem;
+    font-family: "Michroma", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    cursor: pointer;
+}
+.expense-add:hover, .delete-btn:hover{
+    transform: scale(0.9);
+    transition: all 0.1s ease-in-out;
+}
+.expense-items{
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;          
+    overflow-x: auto;       /* Optional: scroll if too many expenses */
+    padding: 5rem 1rem;
+    margin-top: 1rem;
+}
+.expense-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(136, 151, 154);
+    padding: 0.625rem;
+    font-family: "Michroma", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    border-radius: 0.5rem;
+    margin: 0.5rem 0;
+    font-size: 0.7rem;
+}
+.expense-info div {
+  margin: 0.25rem;
+  width: 25%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  display: block; /* allow full wrapping inside div */
+}
+
+.delete-btn{
+    font-family: "Michroma", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    border-radius: 0.25rem;
+    background-color: red;
+    color: #fff;
+    padding: 0.25rem 0.5rem 0.5rem 0.5rem;
+    cursor: pointer;
+    margin: 0.25rem;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 25%;
+}
+@media screen and (max-width: 835px){
+      .expense-tracker-box{
+        grid-row: 3 / 4;
+        grid-column: 1;
+        
+      }
+      .note-box{
+        grid-row: 4 / 5;
+        grid-column: 1;
+        
+      }
+
+ 
+      /* Expense tracker section */
+      .expense-tracker-box{
+        grid-row: 3 / 4;
+        grid-column: 1;
+      }
+      .expense-container{
+        padding: 1.5rem;
+        border-radius: 1rem;
+        border: 1px solid black;
+      }
+      .total-expense{
+      height: 2rem;
+      width: 12rem;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+}
+.total-expense h1{
+    font-size: 0.9rem;
+    font-weight: 200;
+    padding: 0 0.01rem;
+}
+.total-expense .money{
+    font-size: 0.9rem;
+    font-weight: 200;
+    padding: 0.25rem;
+    border-radius: 0.35rem;
+}
+#expense-form{
+    margin-top: 0.35rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+#expense-form input{
+    height: 1.5rem;
+    width: 7rem;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    margin: 0.35rem;
+}
+.expense-add, .delete-btn{
+    height: 1.5rem;
+    width: 3rem;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.5rem 0.5rem 0.5rem;
+    font-size: 0.5rem;
+    margin: 0.35rem;
+    font-weight: 200;
+}
+.expense-items{
+    gap: 0.3rem;          
+    padding: 2.5rem 0.5rem;
+    margin-top: 1rem;
+}
+.expense-info{
+    width: 95%;
+    padding: 0.35rem;
+    font-size: 0.45rem;
+    font-weight: 200;
+    border-radius: 0.25rem;
+    margin: 0.25rem 0;
+}
+.expense-info div {
+    margin: 0.25rem;
+  width: 25%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  display: block; /* allow full wrapping inside div */
+}
+
+}
