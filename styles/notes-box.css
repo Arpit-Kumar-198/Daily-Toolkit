@@ -1,166 +1,153 @@
-.notes-box{
-    /* background-color: blueviolet; */
-    grid-row: 2 / 3;
-    grid-column: 3 / 4;
-    place-content: center;
-    place-items: center;
-    box-sizing: border-box;
-    padding: 1rem 1rem;
-    
-}
-.notes-container{
-        width: 70%;
-        min-width: 244px;
-        height: 70%;
-        padding: 3rem;
-        background-color: rgb(255, 196, 196);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: start;
-        border: 2px solid black;
-        border-radius: 2rem;
-        box-shadow: 0 0 5px black;
-}
-.notes-container:hover{
-        transform: scale(0.95);
-        transition: all 0.3s ease-in-out;
-        box-shadow: 0 0 25px black;
-}
 
-.notes-container h2{
-        font-family: "Michroma", sans-serif;
-        font-size: 2.5rem;
-        font-weight: 400;
-        font-style: normal;
-}
-.note-input{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-#noteText{
-    height: 5rem;
-    width: 20rem;
-    border-radius: 1rem;
-    padding: 1rem;
-    font-size: 1rem;
-}
-#addNoteBtn{
-    height: 5rem;
-    width: 5rem;
-    border-radius: 1rem;
-    padding: 1rem;
-    font-size: 1rem;
-    margin-left: 1rem;
-    background-color: violet;
-    color: #fff;
-    font-family: "Michroma", sans-serif;
-}
-#addNoteBtn:hover, .delete-note:hover{
-    transform: scale(0.9);
-    transition: all 0.1s ease-in-out;
-}
-.notes-list{
-  width: 100%;
-  /* max-height: 100%; */
+.notes-container {
+  width: 85%;
+  max-width: 468px;
+  padding: 2rem;
+  background-color: rgb(255, 196, 196);
   display: flex;
   flex-direction: column;
-  gap: 0.625rem;
-  padding: 5rem 1rem;
-  overflow-y: auto;     /* Enable vertical scrolling */
+  align-items: center;
+  justify-content: start;
+  border: 2px solid black;
+  border-radius: 2rem;
+  box-shadow: 0 0 5px black;
+  overflow: hidden;
+  margin: 2rem 0;
+}
+
+.notes-container:hover {
+  transform: scale(0.95);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 25px black;
+}
+
+.notes-container h2 {
+  font-family: "Michroma", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 1rem;
+}
+
+.note-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+#noteText {
+  height: 4rem;
+  width: 20rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
+  resize: none;
+}
+
+#addNoteBtn {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
+  margin-left: 1rem;
+  background-color: violet;
+  color: #fff;
+  font-family: "Michroma", sans-serif;
+  cursor: pointer;
+}
+
+#addNoteBtn:hover,
+.delete-note:hover {
+  transform: scale(0.9);
+  transition: all 0.1s ease-in-out;
+}
+
+.notes-list {
+  width: 95%;
+  max-height: 475px; /* ✅ scroll limit */
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  overflow-y: auto; /* ✅ enables vertical scrolling */
   margin-top: 1rem;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+
+.note-card {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: antiquewhite;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  margin: 0.5rem 0;
+  font-size: 0.7rem;
+}
+
+.note-card p {
+  font-family: "Bungee", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  word-break: break-word;
+  flex: 1;
+}
+
+.delete-note {
+  font-family: "Michroma", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  border-radius: 0.5rem;
+  background-color: red;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  display: flex;
   justify-content: center;
   align-items: center;
-  box-sizing: border-box;
+  margin: 0.25rem;
+  white-space: nowrap;
 }
-.note-card{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: antiquewhite; 
-    padding: 0.75rem;
-    border-radius: 0.75rem;
-    margin: 0.5rem 0;
-    font-size: 0.7rem;
-}
-.note-card p{
-        font-family: "Bungee", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 1rem;
-        margin: 0 1rem;
-}
-.delete-note{
-    font-family: "Michroma", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    border-radius: 0.25rem;
-    background-color: red;
-    color: #fff;
-    padding: 0.25rem 0.5rem 0.5rem 0.5rem;
-    cursor: pointer;
-    margin: 0.25rem;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    
-}
-@media screen and (max-width: 835px){
-/* Notes Box Section */
-.notes-box{
-    grid-row: 4 / 5;
-    grid-column: 1;
+@media screen and (max-width: 540px){
 
+.notes-container {
+  width: 60%;
+  max-width: 280px;
+  min-width: 280px;
+  margin-bottom: 5rem;
 }
-.notes-container{
-        padding: 1.5rem;
-        border: 1px solid black;
-        border-radius: 1rem;
+
+
+#noteText {
+  height: 3rem;
+  width: 15rem;
 }
-.notes-container h2{
-    font-size: 1.5rem;
-        font-weight: 200;
+
+#addNoteBtn {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  font-size: 0.75rem;
+  margin-left: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-#noteText{
-    height: 2.5rem;
-    width: 10rem;
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-    font-size: 0.75rem;
+
+.notes-list {
+  width: 95%;
+  max-height: 280px; /* ✅ scroll limit */
 }
-#addNoteBtn{
-    height: 2.5rem;
-    width: 3rem;
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-    font-size: 0.75rem;
-    margin-left: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+.delete-note {
+  padding: 0.35rem 0.5rem;
 }
-.notes-list{
-    padding: 3rem 0.5rem;
-    margin-top: 0.75rem;
-     overflow-y: auto;     /* Enable vertical scrolling */
-    overflow-x: hidden;   /* Prevent horizontal scrolling */
-}
-.note-card{
-    margin: 0.5rem;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
-}
-.note-card p{
-        font-weight: 200;
-        font-size: 0.75rem;
-        margin: 0 0.5rem;
-}
-.delete-note{
-    padding: 0.25rem;
-    border-radius: 0.25rem;
-    font-size: 0.5rem;
-}
-     
 }
