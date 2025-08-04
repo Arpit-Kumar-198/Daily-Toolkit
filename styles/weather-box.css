@@ -63,10 +63,25 @@
         font-weight: 400;
         font-style: normal;
       }
-      .weather-image{
-        height: 12rem;
-        width: 12rem;
-      }
+.weather-image {
+  height: 12rem;
+  width: 12rem;
+  animation: float 4s ease-in-out infinite;
+  display: block;
+  margin: auto;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
       .temperature{
         font-family: "Michroma", sans-serif;
         font-weight: 200;

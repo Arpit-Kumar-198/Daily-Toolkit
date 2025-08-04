@@ -3,6 +3,7 @@
         padding: 0;
   }
   body,html{
+        background-color: white;
         font-size: 16px;
         box-sizing: border-box;
         height: 100vh;
@@ -14,6 +15,9 @@
 /* Header styling  */
 
       .header{
+        background: linear-gradient(to right, #0b161d, #1a2c34, #223844);
+        box-shadow: 0 10px 100px rgb(0, 0, 0);
+        color: #fff;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -25,22 +29,28 @@
       .header h2{
        cursor: pointer;
       }
+      .header h2:hover{
+       transform: scale(1.1);
+       transition: all 0.5s ease-in-out;
+      }
       
 /*  Main section styling  */
 
       .main-section{
-        height: 100%;
+        height: 130vh;
         width: 100%;
         display: grid;
         grid-template-rows: 1fr 2fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 2%;
         padding-bottom: 5rem;
-        
+
       }
 
  /*  Footer styling  */
       footer{
+        background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+        box-shadow: 0 0 5px black;
         grid-row: 3 / 4;
         grid-column: 1 / 4;
         text-align: center;
@@ -51,15 +61,17 @@
       footer a{
         text-decoration: none;
         font-size: 2rem;
+        color: #fff;
       }
       footer a i{
         padding-top: 1.5rem;
+        color: #fff;
       }
       footer a i:hover{
         transform: scale(1.2);
         transition: all 0.5s ease-in-out;
       }
-      footer .github{
+      /* footer .github{
         color: black;
       }
        footer .insta{
@@ -67,18 +79,26 @@
       }
       footer .linkedin{
         color: blue;
-      }
+      } */
       footer p{
         font-size: 1rem;
         margin: 1rem;
+        color: #fff;
+      }
+      footer{
+        color: #fff;
       }
 
 @media screen and (max-width: 835px){
+  .header{
+        padding: 0.25rem;
+        height: 5rem;
+      }
         /* Main Section  */
        .main-section{
         width: 100vw;
-        height: 100vh;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        height: 228vh;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr;
         row-gap: 5%;
        
@@ -87,8 +107,9 @@
       footer{
         grid-column: 1;
         grid-row: 5 / 6;
+       
       }
       footer a i{ 
-        padding-top: 1.75%;
+        padding-top: 1.5rem;
       }
 }

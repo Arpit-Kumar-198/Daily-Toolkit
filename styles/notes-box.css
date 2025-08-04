@@ -11,7 +11,7 @@
 .notes-container{
         width: 70%;
         min-width: 244px;
-        height: 80%;
+        height: 70%;
         padding: 3rem;
         background-color: rgb(255, 196, 196);
         display: flex;
@@ -20,7 +20,14 @@
         justify-content: start;
         border: 2px solid black;
         border-radius: 2rem;
+        box-shadow: 0 0 5px black;
 }
+.notes-container:hover{
+        transform: scale(0.95);
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 0 25px black;
+}
+
 .notes-container h2{
         font-family: "Michroma", sans-serif;
         font-size: 2.5rem;
@@ -74,7 +81,7 @@
     align-items: center;
     background-color: antiquewhite; 
     padding: 0.75rem;
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
     margin: 0.5rem 0;
     font-size: 0.7rem;
 }
@@ -105,7 +112,7 @@
 .notes-box{
     grid-row: 4 / 5;
     grid-column: 1;
-   
+
 }
 .notes-container{
         padding: 1.5rem;
@@ -135,7 +142,7 @@
     justify-content: center;
 }
 .notes-list{
-    padding: 2.5rem 0.5rem;
+    padding: 3rem 0.5rem;
     margin-top: 0.75rem;
      overflow-y: auto;     /* Enable vertical scrolling */
     overflow-x: hidden;   /* Prevent horizontal scrolling */

@@ -12,14 +12,20 @@
 .expense-container{
         width: 70%;
         min-width: 244px;
-        height: 80%;
+        height: 70%;
         padding: 3rem;
-        background-color: rgb(231, 170, 96);
+        background-color: rgb(202, 201, 201);
         display: flex;
         flex-direction: column;
         align-items: center;
         border: 2px solid black;
         border-radius: 2rem;
+        box-shadow: 0 0 5px black;
+}
+.expense-container:hover{
+        transform: scale(0.95);
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 0 25px black;
 }
 .total-expense{
     height: 4rem;
@@ -27,7 +33,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #646161;
+    background-color: #1f2833;
     padding: 1rem 2rem;
     border-radius: 1rem;
 }
@@ -36,6 +42,7 @@
     font-family: "Michroma", sans-serif;
     font-weight: 400;
     font-style: normal;
+    color: #fff;
 }
 .total-expense .money{
     font-size: 1.8rem;
@@ -43,7 +50,7 @@
     font-weight: 400;
     font-style: normal;
     padding: 0.5rem;
-    background-color: blue;
+    background-color: rgb(25, 0, 255);
     border-radius: 0.75rem;
     color: #fff;
 }
@@ -55,6 +62,8 @@
 }
 #expense-form{
     margin-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
 }
 #expense-form input{
     height: 2.5rem;
@@ -103,7 +112,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background-color: rgb(136, 151, 154);
+    background-color: rgb(162, 161, 161);
     padding: 0.625rem;
     font-family: "Michroma", sans-serif;
     font-weight: 400;
