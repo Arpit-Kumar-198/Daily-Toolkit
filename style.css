@@ -18,6 +18,7 @@ body {
 body.loaded {
   visibility: visible; /* show when ready */
 }
+
 /* Header styling  */
 .header {
   display: flex;
