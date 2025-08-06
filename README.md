@@ -1,27 +1,89 @@
-# Daily-Toolkit
+# 🛠️ Daily-Toolkit
 
-**Daily-Toolkit** is an all-in-one, fully responsive utility web app built using **Vanilla JavaScript**, **HTML**, and **CSS**. This project brings together several commonly used tools into a single, minimalistic and user-friendly dashboard — with full support for mobile, tablet, and desktop devices.
+**Daily-Toolkit** is a fully responsive, all-in-one utility web app built using **Vanilla JavaScript**, **HTML**, and **CSS**. It brings together a range of practical, everyday tools into a single, seamless dashboard. Designed for accessibility and usability across devices, it's optimized for mobile, tablet, and desktop experiences.
+
+---
 
 ### 🧠 Purpose
-This project was created as a hands-on practice to master **Vanilla JavaScript** by combining multiple mini-projects such as calculator, weather app, note app, expense tracker, and more into one cohesive interface.
 
-### 🚧 Features (Under Development)
-
-- 🌗 Dark/Light Mode Toggle
-- 📅 Displays Day, Date, and Time
-- 🌦️ Weather Data (city input, temperature, humidity)
-- 💨 Air Quality Index (AQI)
-- 🧮 Calculator
-- 💰 Expense Tracker
-- 📝 Notes App
-- 📱 Fully Responsive Design (mobile, tablet, laptop)
+This project was developed as a hands-on way to master **core JavaScript**, **DOM manipulation**, and **modular design** without relying on frameworks. Each utility was carefully crafted and integrated to practice real-world web development techniques like **localStorage**, **responsive UI**, **event handling**, and **component reusability**.
 
 ---
 
-🔗 **Live Demo:** [Daily-Toolkit](https://thecode-hunter.github.io/Daily-Toolkit/)  
+### ✅ Features
+
+- 🌗 **Dark/Light Mode Toggle**  
+- 📅 **Dynamic Day, Date, and Time Display**
+- 🌦️ **Weather Dashboard**  
+  - City search with live temperature, humidity, and condition updates
+- 💨 **Air Quality Index (AQI)**  
+  - Fetched using latitude/longitude of selected city
+- 🧮 **Responsive Calculator**  
+- 💰 **Expense Tracker**  
+  - Add, delete, and persist expenses using `localStorage`  
+  - Real-time total calculation and dynamic UI
+- 📝 **Notes App**  
+  - Add and delete notes with persistent storage  
+  - Dynamic message when no notes exist
+- 📱 **Fully Responsive Design**  
+  - Works on mobile, tablet, and large screens
 
 ---
 
-### 📌 Status
-This project is currently **under development** (~40% complete). More tools, animations, UI enhancements, and local storage support are coming soon.
+### 📁 Folder Structure
+Daily-Toolkit/
+│
+├── images/ # All static images/icons used
+├── javascript/ # Modular JS files
+│ ├── dark-mode.js
+│ ├── dayTimeDate.js
+│ ├── expense-tracker.js
+│ ├── notes.js
+│ └── weather.js
+│
+├── styles/ # Modular CSS files
+│ ├── calculator.css
+│ ├── dark-mode.css
+│ ├── expense-tracker.css
+│ ├── notes-box.css
+│ └── weather-box.css
+│
+├── index.html # Main HTML file
+├── styles.css # Global styling
+└── README.md # Project documentation
+
+
+---
+
+### 🚀 Live Demo
+
+🔗 [**Try It Live**](https://thecode-hunter.github.io/Daily-Toolkit/)
+
+---
+
+### 📌 Project Status
+
+✅ **Completed:** All planned modules have been fully implemented.  
+📦 Project includes clean code organization, consistent UI, and localStorage for persistent data.  
+🎯 Future improvements may include animations, theme customization, and tool expansion (like to-do lists or habit tracker).
+
+---
+
+### 📃 License
+
+
+This project is intended for educational and personal learning purposes only.  
+You are permitted to view, use, and modify the code for non-commercial use.  
+However, redistribution, resale, or claiming ownership of this project or its contents is strictly prohibited.
+
+---
+
+### 🙌 Built With
+
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+
+
+### 📁 Folder Structure
 
