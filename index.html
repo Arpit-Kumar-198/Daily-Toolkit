@@ -1,153 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Daily-Toolkit</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles/calculator.css" />
-  <link rel="stylesheet" href="styles/dark-mode.css" />
-  <link rel="stylesheet" href="styles/weather-box.css" />
-  <link rel="stylesheet" href="styles/expense-tracker.css" />
-  <link rel="stylesheet" href="styles/notes-box.css" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body class="dark-mode">
-  <!-- Header -->
-  <header class="header">
-    <h1>Daily-Toolkit</h1>
-    <h2 class="dark-mode-btn">Dark Mode <i class="fa-solid fa-moon"></i></h2>
-  </header>
-  <!-- Main Section -->
-  <main class="main-section">
-    <!-- Weather -->
-    <div class="weather-box">
-      <div class="date-box">
-        <p class="day">Day</p>
-        <p class="time">Time</p>
-        <p class="date">Date</p>
-      </div>
-      <div class="weather">
-        <div class="div-1">
-          <img class="weather-image" src="images/clouds.png" alt="weather icon" />
-          <p class="condition">Condition</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily-Toolkit</title>
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&family=Material+Symbols+Rounded&family=Material+Symbols+Sharp" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/calculator.css" />
+    <link rel="stylesheet" href="styles/dark-mode.css" />
+    <link rel="stylesheet" href="styles/weather-box.css" />
+    <link rel="stylesheet" href="styles/expense-tracker.css" />
+    <link rel="stylesheet" href="styles/notes-box.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <h1><i class="fas fa-tools brand-icon"></i> Daily-Toolkit</h1>
+      <h2 class="dark-mode-btn">Dark Mode <i class="fa-solid fa-moon"></i></h2>
+    </header>
+    <hr />
+
+    <!-- Main Section -->
+    <main class="main-section">
+      <!-- Weather -->
+      <div class="weather-box">
+        <div class="date-box">
+          <p class="time">Time</p>
+          <p class="day">Day</p>
+          <p class="date">Date</p>
         </div>
-        <div class="div-2">
-          <p class="temperature">Temperature</p>
-          <p class="location">Location</p>
-          <p class="humidity">Humidity</p>
-          <p class="aqi">AQI</p>
-        </div>
-      </div>
-    </div>
-    <!-- Calculator -->
-    
-      <div class="calculator-container">
-        <h1>Calculator</h1>
-        <div class="input-box">
-          <input id="input" type="text" placeholder="Calculate" readonly />
-        </div>
-        <div class="button-box">
-          <!-- calculator buttons -->
-          <button class="btn color-btn" onclick="inputValue = ''; document.querySelector('#input').value=inputValue;">AC</button>
-          <button class="btn color-btn" onclick="inputValue !== 'Syntax Error' ? inputValue = inputValue.slice(0,inputValue.length-1) : inputValue=''; document.querySelector('#input').value=inputValue;"><i class="fa-solid fa-xmark"></i></button>
-          <button class="btn color-btn" onclick="inputValue = inputValue + '%'; document.querySelector('#input').value=inputValue;">%</button>
-          <button class="btn color-btn" onclick="inputValue = inputValue + '/'; document.querySelector('#input').value=inputValue;">/</button>
-          <button class="btn" onclick="inputValue = inputValue + '7'; document.querySelector('#input').value=inputValue;">7</button>
-          <button class="btn" onclick="inputValue = inputValue + '8'; document.querySelector('#input').value=inputValue;">8</button>
-          <button class="btn" onclick="inputValue = inputValue + '9'; document.querySelector('#input').value=inputValue;">9</button>
-          <button class="btn color-btn" onclick="inputValue = inputValue + '*'; document.querySelector('#input').value=inputValue;">*</button>
-          <button class="btn" onclick="inputValue = inputValue + '4'; document.querySelector('#input').value=inputValue;">4</button>
-          <button class="btn" onclick="inputValue = inputValue + '5'; document.querySelector('#input').value=inputValue;">5</button>
-          <button class="btn" onclick="inputValue = inputValue + '6'; document.querySelector('#input').value=inputValue;">6</button>
-          <button class="btn color-btn" onclick="inputValue = inputValue + '-'; document.querySelector('#input').value=inputValue;">-</button>
-          <button class="btn" onclick="inputValue = inputValue + '1'; document.querySelector('#input').value=inputValue;">1</button>
-          <button class="btn" onclick="inputValue = inputValue + '2'; document.querySelector('#input').value=inputValue;">2</button>
-          <button class="btn" onclick="inputValue = inputValue + '3'; document.querySelector('#input').value=inputValue;">3</button>
-          <button class="btn color-btn" onclick="inputValue = inputValue + '+'; document.querySelector('#input').value=inputValue;">+</button>
-          <button class="btn" onclick="inputValue = inputValue + Math.E; document.querySelector('#input').value=inputValue;">e</button>
-          <button class="btn" onclick="inputValue = inputValue + '0'; document.querySelector('#input').value=inputValue;">0</button>
-          <button class="btn" onclick="inputValue = inputValue + '.'; document.querySelector('#input').value=inputValue;">.</button>
-          <button class="btn color-btn" onclick="try{let res = eval(inputValue); inputValue = res;}catch(err){inputValue = 'Syntax Error';} document.querySelector('#input').value=inputValue;">=</button>
+        <div class="weather">
+          <div class="div-1">
+            <img class="weather-image" src="images/clouds.png" alt="weather icon" />
+            <p class="condition">Condition</p>
+          </div>
+          <div class="div-2">
+            <p class="temperature">Temperature</p>
+            <p class="location">Location</p>
+            <p class="humidity">Humidity</p>
+            <p class="aqi">AQI</p>
+          </div>
         </div>
       </div>
 
-    <!-- Expense Tracker -->
-      <div class="expense-container">
+      <!-- Calculator -->
+      <div class="calculator-container main-cards">
+        <h1><i class="fa-solid fa-calculator"></i> Calculator</h1>
+        <div class="input-box">
+          <input id="input" type="text" placeholder="0" readonly />
+        </div>
+        <div class="button-box">
+          <!-- Buttons row-wise -->
+          <button class="btn ac-btn" onclick="inputValue = ''; document.querySelector('#input').value=inputValue;">AC</button>
+          <button class="btn color-btn" onclick="if (inputValue !== 'Syntax Error') { inputValue = inputValue.slice(0, -1); } else { inputValue = ''; } document.querySelector('#input').value = inputValue;">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <button class="btn color-btn" onclick="inputValue += '%'; document.querySelector('#input').value=inputValue;">%</button>
+          <button class="btn color-btn" onclick="inputValue += '/'; document.querySelector('#input').value=inputValue;">/</button>
+          <button class="btn" onclick="inputValue += '7'; document.querySelector('#input').value=inputValue;">7</button>
+          <button class="btn" onclick="inputValue += '8'; document.querySelector('#input').value=inputValue;">8</button>
+          <button class="btn" onclick="inputValue += '9'; document.querySelector('#input').value=inputValue;">9</button>
+          <button class="btn color-btn" onclick="inputValue += '*'; document.querySelector('#input').value=inputValue;">*</button>
+          <button class="btn" onclick="inputValue += '4'; document.querySelector('#input').value=inputValue;">4</button>
+          <button class="btn" onclick="inputValue += '5'; document.querySelector('#input').value=inputValue;">5</button>
+          <button class="btn" onclick="inputValue += '6'; document.querySelector('#input').value=inputValue;">6</button>
+          <button class="btn color-btn" onclick="inputValue += '-'; document.querySelector('#input').value=inputValue;">-</button>
+          <button class="btn" onclick="inputValue += '1'; document.querySelector('#input').value=inputValue;">1</button>
+          <button class="btn" onclick="inputValue += '2'; document.querySelector('#input').value=inputValue;">2</button>
+          <button class="btn" onclick="inputValue += '3'; document.querySelector('#input').value=inputValue;">3</button>
+          <button class="btn color-btn" onclick="inputValue += '+'; document.querySelector('#input').value=inputValue;">+</button>
+          <button class="btn" onclick="inputValue += Math.E; document.querySelector('#input').value=inputValue;">e</button>
+          <button class="btn" onclick="inputValue += '0'; document.querySelector('#input').value=inputValue;">0</button>
+          <button class="btn" onclick="inputValue += '.'; document.querySelector('#input').value=inputValue;">.</button>
+          <button class="btn equal-btn" onclick="try { let res = eval(inputValue).toString(); inputValue = res; } catch (err) { inputValue = 'Syntax Error'; } document.querySelector('#input').value=inputValue;">=</button>
+        </div>
+      </div>
+
+      <!-- Expense Tracker -->
+      <div class="expense-container main-cards">
         <div class="total-expense">
-          <h1>Total Expense</h1>
-          <div class="money">₹400</div>
+          <span class="span1">Total Expense</span>
+          <span class="span2">₹0</span>
         </div>
         
           <form id="expense-form">
-            <input type="text" id="title" placeholder="Enter title" required />
-            <input type="number" id="amount" placeholder="Enter amount" required />
-            <input type="date" id="date" required />
-            <button type="button" class="expense-add">Add</button>
+            <input type="text" id="title" placeholder="Eexpense title" required />
+            <div>
+              <input type="number" id="amount" placeholder="Amount" required />
+              <input type="date" id="date" required />
+            </div>
+            <button type="button" class="expense-add">+ Add</button>
           </form>
         <div class="expense-items">
-          <div class="expense-info">
-            <div>Toy</div>
-            <div>200 ₹</div>
-            <div>24/05/2023</div>
-            <button type="button" class="delete-btn">Delete</button>
-          </div>
-          <div class="expense-info">
-            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id obcaecati rem exercitationem mollitia excepturi, quas ipsam cumque dignissimos unde corporis magn</div>
-            <div>200 ₹</div>
-            <div>24/05/2023</div>
-            <button type="button" class="delete-btn">Delete</button>
-          </div>
-          <div class="expense-info">
-            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id obcaecati rem exercitationem mollitia excepturi, quas ipsam cumque dignissimos unde corporis magn</div>
-            <div>200 ₹</div>
-            <div>24/05/2023</div>
-            <button type="button" class="delete-btn">Delete</button>
-          </div>
-          <div class="expense-info">
-            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id obcaecati rem exercitationem mollitia excepturi, quas ipsam cumque dignissimos unde corporis magn</div>
-            <div>200 ₹</div>
-            <div>24/05/2023</div>
-            <button type="button" class="delete-btn">Delete</button>
-          </div>
+          <p id="default-para">Add Expenses</p>
+          <span class="material-symbols-outlined">
+account_balance_wallet
+</span>
         </div>
-      </div>
+    </div>
     <!-- Notes -->
-      <div class="notes-container">
+      <div class="notes-container main-cards">
         <h2>📝 Notes</h2>
         <div class="note-input">
           <textarea id="noteText" placeholder="Write your note here..."></textarea>
-          <button id="addNoteBtn">Add</button>
+          <button id="addNoteBtn">+ Add</button>
         </div>
         <div class="notes-list">
-          <div class="note-card">
-            <p>This is a sample note. I am Arpit kyrosaki hi hello ji!</p>
-            <button class="delete-note">Delete</button>
-          </div>
-          <div class="note-card">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In rem, voluptas omnis fugiat adipisci minus sed sint animi, unde molestiae amet porro repellendus optio asperiores?This is a sample note. I am Arpit kyrosaki hi hello ji!</p>
-            <button class="delete-note">Delete</button>
-          </div>
-          <div class="note-card">
-            <p>This is a sample note. I am Arpit kyrosaki hi hello ji!</p>
-            <button class="delete-note">Delete</button>
-          </div>
+          <p id="default-note">Add Note</p>
+          <span class="material-symbols-outlined note-span">
+assignment
+</span>
         </div>
       </div>
+    </main>
 
-  </main>
-  <!-- Footer -->
-  <footer>
-    <a href="https://github.com/TheCode-Hunter" target="_blank"><i class="fa-brands fa-github github"></i></a> |
-    <a href="https://www.instagram.com/arpit.13_" target="_blank"><i class="fa-brands fa-instagram insta"></i></a> |
-    <a href="https://www.linkedin.com/in/arpit-kumar-569361296/" target="_blank"><i class="fa-brands fa-linkedin linkedin"></i></a>
-    <p>&copy; 2025 Arpit Kumar. All rights reserved.</p>
-  </footer>
-  <script src="app.js"></script>
-  <script src="javascript/weather.js"></script>
-  <script src="javascript/dayTimeDate.js"></script>
-</body>
+    <hr />
+
+    <!-- Footer -->
+    <footer>
+      <a href="https://github.com/TheCode-Hunter" target="_blank"><i class="fa-brands fa-github github"></i></a> |
+      <a href="https://x.com/ArpitKumar43185" target="_blank"><i class="fa-brands fa-x-twitter x-twitter"></i></a> |
+      <a href="https://www.linkedin.com/in/arpit-kumar-569361296/" target="_blank"><i class="fa-brands fa-linkedin linkedin"></i></a>
+      <p>&copy; 2025 Arpit Kumar. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="javascript/dark-mode.js"></script>
+    <script src="javascript/weather.js"></script>
+    <script src="javascript/dayTimeDate.js"></script>
+    <script src="javascript/expense-tarcker.js"></script>
+    <script src="javascript/notes.js"></script>
+  </body>
 </html>

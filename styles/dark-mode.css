@@ -1,32 +1,32 @@
 /* Dark mode base styling */
 .dark-mode {
-  background: linear-gradient(to right, #0b161d, #1a2c34, #223844);
+  background: #1e293b;
   color: white;
-
 }
 
 /* Header & Footer */
 .dark-mode header,
 .dark-mode footer {
-    background: #0b161d;
-    box-shadow: 0 10px 50px white;
+    background: #0f172a;
+    color: #fff;
+}
+.dark-mode header h1{
+  color: #fff;
+}
+.dark-mode header h1 i{
+  color: #fff;
 }
 
 .dark-mode .main-section {
-  
-  background: linear-gradient(to right, #0b161d, #1a2c34, #223844);
+  background: #1e293b;
 }
-/* Weather box */
 .dark-mode .weather-box {
-  filter: brightness(1.0);
-  background: linear-gradient(to right, #0b161d, #1a2c34, #223844);
+  background-color: rgba(0,0,255,1);
 }
 
 /* Footer links, text, etc. */
 .dark-mode footer a i,
-.dark-mode .date-box p,
-.dark-mode .weather p
-{
+.dark-mode footer p {
   color: white;
 }
 .dark-mode .expense-info div,
@@ -37,10 +37,5 @@
 }
 
 
-/* Containers hover effect */
-.dark-mode .calculator-container:hover,
-.dark-mode .notes-container:hover,
-.dark-mode .expense-container:hover {
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
-}
+
 

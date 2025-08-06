@@ -1,66 +1,61 @@
+const API_KEY = "eb8b24d7d6f6c88f7289d9cb858c5594";
 
-       // Weather
-      const city = prompt("Enter city name:");
-      const API_KEY = "eb8b24d7d6f6c88f7289d9cb858c5594";
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
+const weatherImg = document.querySelector('.weather-image');
+const temperature = document.querySelector('.temperature');
+const place = document.querySelector('.location');
+const humidity = document.querySelector('.humidity');
+const aqi = document.querySelector('.aqi');
+const condition = document.querySelector('.condition');
 
-      const weatherImg = document.querySelector('.weather-image');
-      const temperature = document.querySelector('.temperature');
-      const place = document.querySelector('.location');
-      const humidity = document.querySelector('.humidity');
-      const aqi = document.querySelector('.aqi');
-      const condition = document.querySelector('.condition');
-      const weatherImages = {
-        "Clear": "images/clear.png",
-        "Clouds": "images/clouds.png",
-        "Rain": "images/rain.png",
-        "Thunderstorm": "images/thunderstorm.png",
-        "Snow": "images/snow.png",
-        "Mist": "images/mist.png",
-      };
+const weatherImages = {
+  "Clear": "images/clear.png",
+  "Clouds": "images/clouds.png",
+  "Rain": "images/rain.png",
+  "Thunderstorm": "images/thunderstorm.png",
+  "Snow": "images/snow.png",
+  "Mist": "images/mist.png",
+};
 
-      fetch(url)
-        .then(res => res.json())
-        .then(data => {
-          place.innerText = data.name;
-          humidity.innerText = `Humidity: ${data.main.humidity}%`;
-          temperature.innerText = `${Math.round(data.main.temp - 273)} °C`;
-          condition.innerText = data.weather[0].description;
+async function fetchWeatherForCity(city) {
+  try {
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error("Invalid city");
+    const data = await res.json();
 
-          const weatherMain = data.weather[0].main; 
-          weatherImg.src = weatherImages[weatherMain];
-          const lat = data.coord.lat;
-          const lon = data.coord.lon;
+    // Show page now that we have valid data
+    document.body.classList.add('loaded');
 
-          const aqiUrl = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
+    place.innerText = data.name;
+    humidity.innerText = `Humidity: ${data.main.humidity}%`;
+    temperature.innerText = `${Math.round(data.main.temp - 273)} °C`;
+    condition.innerText = data.weather[0].description;
 
-          fetch(aqiUrl)
-            .then(res => res.json())
-            .then(aqiData => {
-              const aqiIndex = aqiData.list[0].main.aqi; // 1 to 5
+    const weatherMain = data.weather[0].main;
+    weatherImg.src = weatherImages[weatherMain] || "images/default.png";
 
-              let status = "";
-              switch (aqiIndex) {
-                case 1:
-                  status = "Good😊 (0–50)";
-                  break;
-                case 2:
-                  status = "Fair🙂 (51–100)";
-                  break;
-                case 3:
-                  status = "Moderate😐 (101–150)";
-                  break;
-                case 4:
-                  status = "Poor😷 (151–200)";
-                  break;
-                case 5:
-                  status = "Very Poor☠️ (200+)";
-                  break;
-                default:
-                  status = "Unknown";
-              }
+    const lat = data.coord.lat;
+    const lon = data.coord.lon;
 
-              aqi.innerText = `AQI : ${status}`;
-            });
+    const aqiUrl = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
+    const aqiRes = await fetch(aqiUrl);
+    const aqiData = await aqiRes.json();
+    const aqiIndex = aqiData.list[0].main.aqi;
 
-        });
+    const aqiStatus = ["Unknown", "Good😊", "Fair🙂", "Moderate😐", "Poor😷", "Very Poor☠️"];
+    aqi.innerText = `AQI: ${aqiStatus[aqiIndex] || "Unknown"}`;
+
+  } catch (error) {
+    alert("❌ Invalid city. Please try again.");
+    askForCity(); // Retry
+  }
+}
+
+function askForCity() {
+  const city = prompt("Enter a valid city name:");
+  if (city) fetchWeatherForCity(city);
+  else askForCity(); // If user hits cancel or empty
+}
+
+// 🔁 Start asking immediately
+askForCity();

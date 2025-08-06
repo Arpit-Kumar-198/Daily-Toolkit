@@ -1,94 +1,73 @@
-    .calculator-container{
-        width: 90%;
-        max-width: 532px;
-        margin: 2rem 0;
-        padding: 1rem 0;
-        background-color: bisque;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        border: 2px solid black;
-        border-radius: 2rem;
-        box-shadow: 0 0 5px black;
-        
-      }
-      .calculator-container:hover{
-        transform: scale(0.95);
-        transition: all 0.3s ease-in-out;
-        box-shadow: 0 0 25px black;
-      }
-      .calculator-container h1{
-        font-size: 2.5rem;
-        font-family: "Michroma", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        margin: 1rem 0;
-      }
-      #input{
-        width: 85%;
-        max-width: 400px;
-        font-size: 1.5rem;
-        border-radius: 1rem;
-        padding: 1rem;
-        margin: 1rem 0;
-        
-      }
-      .button-box{
-        width: 100%;
-        max-width: 400px;
-        height: auto;
-        margin: 1rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-      .btn{
-        width: 20%;
-        max-width: 65px;
-        aspect-ratio: 1/1;
-        font-size: 1rem;
-        background-color: #fff;
-        margin: 0.5rem;
-        border-radius: 0.5rem;
-        font-family: "Michroma", sans-serif;
-        font-weight: 700;
-        border: none;
-      }
-      .btn:hover{
-      transform: scale(0.9);
-      transition: all 0.1s ease-in-out;
-      }
-      .color-btn{
-        background-color: orange;
-        color: #fff;
-      }
-
-@media screen and (max-width: 540px){
-    .calculator-container{
-        width: 70%;
-        max-width: 380px;
-        min-width: 280px;
-       
-      }
-      
-      #input{
-        width: 85%;
-        max-width: 300px;
-        font-size: 1.5rem;
-        border-radius: 1rem;
-        padding: 1rem;
-        margin: 1rem 0;
-        
-      }
-      .button-box{
-        width: 100%;
-        max-width: 280px;
-      }
-      .btn{
-        width: 20%;
-        max-width: 45px;
-      }
-
+.calculator-container {
+  background-color: rgb(255, 225, 196);
+}
+.calculator-container h1 {
+  font-size: 2rem;
+  font-family: "Michroma", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 1rem 0;
+}
+#input {
+  max-width: 400px;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 1rem 0;    
+}
+.button-box {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.btn {
+  width: 20%;
+  max-width: 65px;
+  aspect-ratio: 1/1;
+  font-size: 1rem;
+  background-color: #fff;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  font-family: "Michroma", sans-serif;
+  font-weight: 700;
+  border: none;
+}
+.btn:hover {
+  transform: translatey(-2px);
+  transition: all 0.1s ease-in-out;
+}
+.color-btn {
+  background-color: rgba(255,165,0);
+  color: #fff;
+}
+.color-btn:hover {
+  background-color: rgb(255, 150, 0);
+}
+.equal-btn {
+  background-color: rgb(0,0,255);
+  color: #fff;
+}
+.equal-btn:hover {
+  background-color: rgb(0,0,230);
+}
+.ac-btn {
+  background-color: rgb(255, 50, 0);
+  color: #fff;
+}
+.ac-btn:hover {
+  background-color: rgb(255,0, 0);
+}
+@media screen and (max-width:485px) {
+  .calculator-container {
+    height: auto;
+    padding: 0.5rem;
+    margin: 2rem 0;
+    max-width: 95%;
+    border-radius: 1rem;
+  }
 }

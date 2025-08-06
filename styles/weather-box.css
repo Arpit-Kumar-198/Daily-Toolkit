@@ -1,74 +1,67 @@
 .weather-box {
+  min-width: 300px;
+  background-color: rgba(0,0,255,0.8);
   display: flex;
-  flex-wrap: wrap; /* allow wrapping */
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  width: 100vw; /* important */
+  width: 95%; 
   box-sizing: border-box;
-  padding: 1rem; /* optional */
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
 }
 
-
-      /* Day Time and Date styling  */
-      .date-box {
-        padding: 2% 5% 2% 5%;
-        color: black;
-        display: flex;
-        justify-content: start;
-        flex-direction: column;
-      }
-      .day{
-        font-family: "Michroma", sans-serif;
-        font-weight: 200;
-        font-style: normal;
-        font-size: 3rem;
-        margin-bottom: 1rem;
-      }
-      .time{
-        font-family: "Bungee", sans-serif;
-        font-weight: 700;
-        font-style: normal;
-        font-size: 2.5rem;
-      }
-      .date{
-        font-family: "Bungee", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 1.5rem;
-      }
-      
-      /* Weather section styling  */
-      .weather{
-        color: black;
-        display: flex;
-        justify-content: space-between;
-        margin-right: 2rem;
-      }
-      .div-1{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 1rem;
-      }
-      .div-2{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: start;
-        padding: 1rem;
-      }
-
-      .div-1 .condition{
-        font-size: 1.5rem;
-        margin-top: 1rem;
-        font-family: "Bungee", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-      }
+/* Day Time and Date styling  */
+.date-box {
+  padding: 2% 0 2% 5%;
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+}
+.day{
+  font-family: "Bungee", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.5rem;
+}
+.time {
+  font-family: "Michroma", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.date {
+  font-size: 1.5rem;
+}
+/* Weather section styling  */
+.weather {
+  color: rgb(255, 255, 255);
+  display: flex;
+  margin-right: 5%;
+}
+.div-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2rem;
+}
+.div-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+.div-1 .condition {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica', sans-serif;
+}
 .weather-image {
-  height: 12rem;
-  width: 12rem;
+  height: 11rem;
+  width: 11rem;
   animation: float 4s ease-in-out infinite;
   display: block;
   margin: auto;
@@ -85,27 +78,28 @@
     transform: translateY(0px);
   }
 }
-      .temperature{
-        font-family: "Michroma", sans-serif;
-        font-weight: 200;
-        font-style: normal;
-        font-size: 3rem;
-        margin-bottom: 1rem;
-      }
-      .location{
-        font-size: 2.5rem;
-        font-family: "Bungee", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-      }
-      .humidity, .aqi{
-        font-family: "Bungee", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 1.5rem;
-      }
- @media screen and (max-width: 835px){
-   .weather-box {
-    margin-bottom: 10rem;
+.temperature {
+  font-family: "Michroma", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
+.location {
+  font-size: 2rem; /* slightly reduced */
+  font-family: "Bungee", sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+.humidity, .aqi {
+  font-size: 1.5rem;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica', sans-serif;
+}
+@media screen and (max-width: 485px) {
+  .location {
+    font-size: 1.5rem;
+    text-align: center;
+  }
 }

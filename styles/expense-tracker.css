@@ -1,80 +1,68 @@
 .expense-container {
-  width: 90%;
-  max-width: 536px;
-  padding: 2rem;
   background-color: rgb(202, 201, 201);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid black;
-  border-radius: 2rem;
-  box-shadow: 0 0 5px black;
-  box-sizing: border-box;
-  margin: 2rem 0;
 }
-
-.expense-container:hover {
-  transform: scale(0.95);
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 25px black;
-}
-
 .total-expense {
-  width: 100%;
+  width: 90%;
+  height: 8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #1f2833;
-  padding: 0.5rem 1rem;
-  border-radius: 0.75rem;
+  background: rgb(0, 160, 0);
+  padding: 1rem;
+  border-radius: 1rem;
   box-sizing: border-box;
 }
-
-.total-expense h1,
-.total-expense .money {
-  font-size: clamp(1rem, 4vw, 1.5rem);
+.total-expense .span1 {
+  font-size: 1rem;
   font-family: "Michroma", sans-serif;
   font-weight: 400;
   color: #fff;
 }
-
-.total-expense .money {
-  padding: 0.25rem 1rem;
-  background-color: rgb(25, 0, 255);
-  border-radius: 0.75rem;
+.total-expense .span2 {
+  font-size: 2rem;
+  font-family: "Bungee", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #fff;
 }
-
 #expense-form {
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   box-sizing: border-box;
 }
-
 #expense-form input {
   width: 90%;
-  max-width: 400px;
-  height: 2.5rem;
+  height: 3rem;
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
   font-size: 1rem;
   margin: 0.5rem 0;
   box-sizing: border-box;
+  outline: 1px solid grey;
+  border: none;
 }
-
+#expense-form div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#expense-form div input {
+  margin: 0.5rem 1rem;
+  border: none;
+}
 .expense-add {
-  background-color: green;
+  width: 90%;
+  background-color: rgb(0,0,255);
   color: #fff;
-  height: 2.5rem;
-  width: 100%;
-  max-width: 150px;
   border-radius: 0.5rem;
-  font-size: 1rem;
-  font-family: "Michroma", sans-serif;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
   margin: 0.5rem 0;
+  font-family: "Michroma", sans-serif;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -83,73 +71,79 @@
 
 .expense-add:hover,
 .delete-btn:hover {
-  transform: scale(0.9);
+  background-color: rgb(0,0,230);
+  transform: translatey(-2px);
   transition: all 0.1s ease-in-out;
 }
-
 .expense-items {
-  width: 100%;
-  max-height: 275px; /* ✅ limit height so it doesn’t expand endlessly */
-  overflow-y: auto;   /* ✅ enable vertical scroll */
+  width: 90%;
+  height: 420px;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   margin-top: 1rem;
-  padding-right: 0.5rem; /* avoid hiding scrollbar under content */
+  padding-right: 0.5rem;
   box-sizing: border-box;
-  
+}
+.expense-items #default-para{
+  font-size: 1.5rem;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica', sans-serif;
+  font-weight: 400;
+  color: rgba(0,0,0,0.6);
+  margin: 0.5rem;
+}
+.expense-items .material-symbols-outlined{
+  font-size: 3rem;
+  font-weight: 400;
+  color: rgba(0,0,0,0.6);
 }
 .expense-info {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 500px;
-  background-color: rgb(162, 161, 161);
-  font-family: "Michroma", sans-serif;
+  background: #f5f5f5;
   border-radius: 0.5rem;
   padding: 0.75rem;
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
+  margin: 0.5rem 0rem;
   box-sizing: border-box;
-  margin: 0.75rem 0;
+  border: 1px solid grey;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica', sans-serif;
 }
-
-.expense-info div {
-  flex: 1 1 25%;
-  margin: 0.25rem;
-  text-align: center;
-  word-wrap: break-word;
+.expense-info .div1 #p1 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
 }
-
-.delete-btn {
-  background-color: red;
+.expense-info .div1 #p2 {
+  font-size: 0.8rem;
+}
+.expense-info .div2 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+}
+.expense-info .div2 p {
+ margin: 0 0.5rem;
+}
+.expense-info .div2 .delete-btn {
+  background-color: rgb(255, 50, 0);
+  border-radius: 0.5rem;
   color: #fff;
   border: none;
-  padding: 0.4rem 0.75rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  font-size: 0.9rem;
-  font-family: "Michroma", sans-serif;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 5%;
-  margin-left: 5%;
+  outline: none;
+  padding: 0.5rem;
 }
-
-@media screen and (max-width: 540px){
- .expense-container {
-  width: 80%;
-  max-width: 292px;
-  min-width: 280px;
+.expense-info .div2 .delete-btn:hover {
+  background-color: 
+  rgb(255, 0, 0);
 }
-
-.expense-info {
-  width: 100%;
-  max-width: 280px;
- 
-}
-
+@media screen and (max-width:485px){
+  .expense-container{
+    width: 95%;
+    height: 540px;
+    max-width: 380px;
+    max-height: 540px;
+  }
 }

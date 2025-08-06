@@ -1,44 +1,26 @@
-
-.notes-container {
-  width: 85%;
-  max-width: 468px;
-  padding: 2rem;
+.notes-container {    
   background-color: rgb(255, 196, 196);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: start;
-  border: 2px solid black;
-  border-radius: 2rem;
-  box-shadow: 0 0 5px black;
-  overflow: hidden;
-  margin: 2rem 0;
-}
-
-.notes-container:hover {
-  transform: scale(0.95);
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 25px black;
 }
 
 .notes-container h2 {
   font-family: "Michroma", sans-serif;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 400;
   font-style: normal;
   margin-bottom: 1rem;
 }
-
 .note-input {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
 }
 
 #noteText {
   height: 4rem;
-  width: 20rem;
+  width: 80%;
   border-radius: 1rem;
   padding: 1rem;
   font-size: 1rem;
@@ -46,108 +28,91 @@
 }
 
 #addNoteBtn {
-  height: 5rem;
-  width: 5rem;
-  border-radius: 1rem;
-  padding: 1rem;
-  font-size: 1rem;
-  margin-left: 1rem;
-  background-color: violet;
+  width: 80%;
+  background-color: rgb(0,0,255);
   color: #fff;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  margin: 1rem 0;
   font-family: "Michroma", sans-serif;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #addNoteBtn:hover,
 .delete-note:hover {
-  transform: scale(0.9);
+  background-color: rgb(0,0,230);
+  transform: translatey(-2px);
   transition: all 0.1s ease-in-out;
 }
 
 .notes-list {
-  width: 95%;
-  max-height: 475px; /* ✅ scroll limit */
+  width: 90%;
+  height: 420px;
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  overflow-y: auto; /* ✅ enables vertical scrolling */
+  overflow-y: auto; 
   margin-top: 1rem;
   box-sizing: border-box;
   align-items: center;
   justify-content: flex-start;
 }
-
-
-
+.notes-list #default-note{
+  font-size: 1.5rem;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica', sans-serif;
+  font-weight: 400;
+  color: rgba(0,0,0,0.6);
+  margin: 0.5rem;
+}
+.notes-list .note-span{
+  font-size: 3rem;
+  font-weight: 400;
+  color: rgba(0,0,0,0.6);
+}
 .note-card {
-  width: 95%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: antiquewhite;
+  background-color: #f8fafc;
+  border-radius: 0.5rem;
   padding: 0.75rem;
-  border-radius: 0.75rem;
-  margin: 0.5rem 0;
-  font-size: 0.7rem;
+  margin: 0.5rem 100rem;
+  box-sizing: border-box;
+  border: 1px solid grey;;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica', sans-serif;
 }
 
 .note-card p {
-  font-family: "Bungee", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 1rem;
+  font-size: 1.2rem;
   word-break: break-word;
   flex: 1;
+  margin-right: 1rem;
 }
 
 .delete-note {
-  font-family: "Michroma", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  background-color: rgb(255, 50, 0);
   border-radius: 0.5rem;
-  background-color: red;
   color: #fff;
-  padding: 0.5rem 0.75rem;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0.25rem;
-  white-space: nowrap;
-}
-@media screen and (max-width: 540px){
-
-.notes-container {
-  width: 60%;
-  max-width: 280px;
-  min-width: 280px;
-  margin-bottom: 5rem;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
 }
 
-
-#noteText {
-  height: 3rem;
-  width: 15rem;
+.delete-note:hover {
+  background-color: 
+  rgb(255, 0, 0);
 }
 
-#addNoteBtn {
-  height: 4rem;
-  width: 4rem;
-  border-radius: 1rem;
-  padding: 1rem;
-  font-size: 0.75rem;
-  margin-left: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.notes-list {
-  width: 95%;
-  max-height: 280px; /* ✅ scroll limit */
-}
-
-.delete-note {
-  padding: 0.35rem 0.5rem;
-}
+@media screen and (max-width:485px){
+  .notes-container{
+    width: 95%;
+    height: 540px;
+    max-width: 380px;
+    max-height: 540px;
+  }
 }
