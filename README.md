@@ -31,7 +31,7 @@ This project was developed as a hands-on way to master **core JavaScript**, **DO
 ---
 
 ### 📁 Folder Structure
-
+<pre>
 Daily-Toolkit/
 │
 ├── images/ # All static images/icons used
@@ -52,7 +52,7 @@ Daily-Toolkit/
 ├── index.html # Main HTML file
 ├── styles.css # Global styling
 └── README.md # Project documentation
-
+</pre>
 
 ---
 
