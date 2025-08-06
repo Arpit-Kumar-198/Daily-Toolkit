@@ -31,6 +31,7 @@ This project was developed as a hands-on way to master **core JavaScript**, **DO
 ---
 
 ### 📁 Folder Structure
+
 Daily-Toolkit/
 │
 ├── images/ # All static images/icons used
