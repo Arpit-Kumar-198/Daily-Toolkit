@@ -20,6 +20,9 @@
 .dark-mode .main-section {
   background: #1e293b;
 }
+.dark-mode .main-cards:hover {
+  box-shadow: 0 0 2px white;
+}
 .dark-mode .weather-box {
   background-color: rgba(0,0,255,1);
 }

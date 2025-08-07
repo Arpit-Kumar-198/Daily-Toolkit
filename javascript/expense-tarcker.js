@@ -98,7 +98,7 @@ function createExpenseInDOM(expenseData) {
 
 function toggleDefaultMessage() {
   const defaultPara = document.getElementById('default-para');
-  const defaultIcon = document.querySelector('.material-symbols-outlined');
+  const defaultIcon = document.querySelector('.expense-icon');
   const hasExpenses = document.querySelectorAll('.expense-info').length > 0;
 
   if (hasExpenses) {
@@ -115,8 +115,7 @@ function toggleDefaultMessage() {
 
     if (!defaultIcon) {
       const newIcon = document.createElement('span');
-      newIcon.id = 'default-icon';
-      newIcon.classList.add('material-symbols-outlined');
+      newIcon.classList.add('material-symbols-outlined', 'expense-icon');
       newIcon.innerText = 'account_balance_wallet';
       expenseItems.appendChild(newIcon);
     }
