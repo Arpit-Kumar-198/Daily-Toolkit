@@ -41,20 +41,19 @@ async function fetchWeatherForCity(city) {
     const aqiRes = await fetch(aqiUrl);
     const aqiData = await aqiRes.json();
     const aqiIndex = aqiData.list[0].main.aqi;
-
     const aqiStatus = ["Unknown", "Good😊", "Fair🙂", "Moderate😐", "Poor😷", "Very Poor☠️"];
     aqi.innerText = `AQI: ${aqiStatus[aqiIndex] || "Unknown"}`;
 
   } catch (error) {
     alert("❌ Invalid city. Please try again.");
-    askForCity(); // Retry
+    askForCity(); 
   }
 }
 
 function askForCity() {
   const city = prompt("Enter a valid city name:");
   if (city) fetchWeatherForCity(city);
-  else askForCity(); // If user hits cancel or empty
+  else askForCity(); 
 }
 
 // 🔁 Start asking immediately
