@@ -61,28 +61,30 @@
         </div>
         <div class="button-box">
           <!-- Buttons row-wise -->
-          <button class="btn ac-btn" onclick="inputValue = ''; document.querySelector('#input').value=inputValue;">AC</button>
-          <button class="btn color-btn" onclick="if (inputValue !== 'Syntax Error') { inputValue = inputValue.slice(0, -1); } else { inputValue = ''; } document.querySelector('#input').value = inputValue;">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-          <button class="btn color-btn" onclick="inputValue += '%'; document.querySelector('#input').value=inputValue;">%</button>
-          <button class="btn color-btn" onclick="inputValue += '/'; document.querySelector('#input').value=inputValue;">/</button>
-          <button class="btn" onclick="inputValue += '7'; document.querySelector('#input').value=inputValue;">7</button>
-          <button class="btn" onclick="inputValue += '8'; document.querySelector('#input').value=inputValue;">8</button>
-          <button class="btn" onclick="inputValue += '9'; document.querySelector('#input').value=inputValue;">9</button>
-          <button class="btn color-btn" onclick="inputValue += '*'; document.querySelector('#input').value=inputValue;">*</button>
-          <button class="btn" onclick="inputValue += '4'; document.querySelector('#input').value=inputValue;">4</button>
-          <button class="btn" onclick="inputValue += '5'; document.querySelector('#input').value=inputValue;">5</button>
-          <button class="btn" onclick="inputValue += '6'; document.querySelector('#input').value=inputValue;">6</button>
-          <button class="btn color-btn" onclick="inputValue += '-'; document.querySelector('#input').value=inputValue;">-</button>
-          <button class="btn" onclick="inputValue += '1'; document.querySelector('#input').value=inputValue;">1</button>
-          <button class="btn" onclick="inputValue += '2'; document.querySelector('#input').value=inputValue;">2</button>
-          <button class="btn" onclick="inputValue += '3'; document.querySelector('#input').value=inputValue;">3</button>
-          <button class="btn color-btn" onclick="inputValue += '+'; document.querySelector('#input').value=inputValue;">+</button>
-          <button class="btn" onclick="inputValue += Math.E; document.querySelector('#input').value=inputValue;">e</button>
-          <button class="btn" onclick="inputValue += '0'; document.querySelector('#input').value=inputValue;">0</button>
-          <button class="btn" onclick="inputValue += '.'; document.querySelector('#input').value=inputValue;">.</button>
-          <button class="btn equal-btn" onclick="try { let res = eval(inputValue).toString(); inputValue = res; } catch (err) { inputValue = 'Syntax Error'; } document.querySelector('#input').value=inputValue;">=</button>
+          <button class="btn ac-btn" onclick="clearInput()">AC</button>
+          <button class="btn color-btn" onclick="backspace()"><i class="fa-solid fa-xmark"></i></button>
+          <button class="btn color-btn" onclick="appendValue('^')">^</button>
+          <button class="btn color-btn" onclick="appendValue('/')">/</button>
+
+          <button class="btn" onclick="appendValue('7')">7</button>
+          <button class="btn" onclick="appendValue('8')">8</button>
+          <button class="btn" onclick="appendValue('9')">9</button>
+          <button class="btn color-btn" onclick="appendValue('*')">*</button>
+
+          <button class="btn" onclick="appendValue('4')">4</button>
+          <button class="btn" onclick="appendValue('5')">5</button>
+          <button class="btn" onclick="appendValue('6')">6</button>
+          <button class="btn color-btn" onclick="appendValue('-')">-</button>
+
+          <button class="btn" onclick="appendValue('1')">1</button>
+          <button class="btn" onclick="appendValue('2')">2</button>
+          <button class="btn" onclick="appendValue('3')">3</button>
+          <button class="btn color-btn" onclick="appendValue('+')">+</button>
+
+          <button class="btn" onclick="appendValue('Math.E')">e</button>
+          <button class="btn" onclick="appendValue('0')">0</button>
+          <button class="btn" onclick="appendValue('.')">.</button>
+          <button class="btn equal-btn" onclick="calculate()">=</button>
         </div>
       </div>
 
@@ -143,8 +145,39 @@ assignment
     <script>
       // Calculator 
         let inputValue = "";
-        const input = document.querySelector('#input');
-        input.value = inputValue;
+
+  function updateInput() {
+    document.querySelector("#input").value = inputValue;
+  }
+
+  function appendValue(val) {
+    if (inputValue === "Syntax Error") inputValue = "";
+    inputValue += val;
+    updateInput();
+  }
+
+  function clearInput() {
+    inputValue = "";
+    updateInput();
+  }
+
+  function backspace() {
+    if (inputValue === "Syntax Error") inputValue = "";
+    else inputValue = inputValue.slice(0, -1);
+    updateInput();
+  }
+
+  function calculate() {
+    try {
+      // Replace ^ with ** for exponentiation
+      let expression = inputValue.replace(/\^/g, "**");
+      let res = eval(expression).toString();
+      inputValue = res;
+    } catch (err) {
+      inputValue = "Syntax Error";
+    }
+    updateInput();
+  }
     </script>
   </body>
 </html>
