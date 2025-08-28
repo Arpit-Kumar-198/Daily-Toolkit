@@ -58,7 +58,7 @@ Daily-Toolkit/
 
 ### 🚀 Live Demo
 
-🔗 [**Try It Live**](https://thecode-hunter.github.io/Daily-Toolkit/)
+🔗 [**Try It Live**](https://arpit-kumar-198.github.io/Daily-Toolkit/)
 
 ---
 
@@ -85,6 +85,4 @@ However, redistribution, resale, or claiming ownership of this project or its co
 - CSS3
 - JavaScript (ES6+)
 
-
-### 📁 Folder Structure
 
