@@ -70,19 +70,18 @@ Daily-Toolkit/
 
 ---
 
-### 📃 License
+### 🙌 Built With
 
-
-This project is intended for educational and personal learning purposes only.  
-You are permitted to view, use, and modify the code for non-commercial use.  
-However, redistribution, resale, or claiming ownership of this project or its contents is strictly prohibited.
+- HTML5, CSS3, JavaScript (ES6+)
 
 ---
 
-### 🙌 Built With
+## 📬 Contact
 
-- HTML5
-- CSS3
-- JavaScript (ES6+)
+- **Author:** Arpit Kumar  
+- **E-mail:** [arpitkumar19842@gmail.com](mailto:arpitkumar19842@gmail.com)  
+- **LinkedIn:** [Arpit Kumar](https://www.linkedin.com/in/arpit-kumar-569361296/)
+
+---
 
 
