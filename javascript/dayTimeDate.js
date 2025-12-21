@@ -10,11 +10,11 @@ const time = document.querySelector('.time');
 const hours = currentDate.getHours();
 const minutes = currentDate.getMinutes();
 const period = hours >= 12 ? "PM" : "AM";
-time.innerText = ` ${currentDate.getHours()}:${currentDate.getMinutes()} ${period}`;
+time.innerText = ` ${currentDate.getHours() < 10 ? '0'+currentDate.getHours() : currentDate.getHours()}:${currentDate.getMinutes() < 10 ? '0'+currentDate.getMinutes() : currentDate.getMinutes()} ${period}`;
 // Date
-const date = document.querySelector('.date');
+const date = document.querySelector('.date-box .date');
 const d = currentDate.getDate() < 10 ? `0${currentDate.getDate()}` : currentDate.getDate();
-const m = currentDate.getMonth() < 10 ? `0${currentDate.getMonth()}` : currentDate.getMonth();
+const m = currentDate.getMonth()+1 < 10 ? `0${currentDate.getMonth() + 1}` : currentDate.getMonth()+1;
 const y = currentDate.getFullYear();
 date.innerText = `${d} / ${m} / ${y}`;
         
