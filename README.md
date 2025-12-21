@@ -80,7 +80,7 @@ Daily-Toolkit/
 
 - **Author:** Arpit Kumar  
 - **E-mail:** [arpitkumar19842@gmail.com](mailto:arpitkumar19842@gmail.com)  
-- **LinkedIn:** [Arpit Kumar](https://www.linkedin.com/in/arpit-kumar-569361296/)
+- **LinkedIn:** [Arpit Kumar](https://www.linkedin.com/in/arpit-fullstack-dev/)
 
 ---
 
