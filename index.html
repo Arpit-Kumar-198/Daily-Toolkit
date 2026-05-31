@@ -1,20 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Daily-Toolkit</title>
+    <title>Daily Toolkit</title>
 
-    <!-- Fonts & Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-   
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&family=Material+Symbols+Rounded&family=Material+Symbols+Sharp" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&family=Material+Symbols+Rounded&family=Material+Symbols+Sharp"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet" />
 
-    <!-- Styles -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Michroma&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/calculator.css" />
     <link rel="stylesheet" href="styles/dark-mode.css" />
     <link rel="stylesheet" href="styles/weather-box.css" />
@@ -22,28 +42,44 @@
     <link rel="stylesheet" href="styles/notes-box.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <!-- Header -->
+    <!-- ================= HEADER ================= -->
     <header class="header">
-      <h1><i class="fas fa-tools brand-icon"></i> Daily-Toolkit</h1>
-      <h2 class="dark-mode-btn">Dark Mode <i class="fa-solid fa-moon"></i></h2>
+      <h1>
+        <i class="fas fa-tools brand-icon"></i>
+        Daily-Toolkit
+      </h1>
+
+      <h2 class="dark-mode-btn">
+        Dark Mode
+        <i class="fa-solid fa-moon"></i>
+      </h2>
     </header>
+
     <hr />
 
-    <!-- Main Section -->
+    <!-- ================= MAIN SECTION ================= -->
     <main class="main-section">
-      <!-- Weather -->
-      <div class="weather-box">
+      <!-- ========= WEATHER ========= -->
+      <section class="weather-box">
         <div class="date-box">
           <p class="time">Time</p>
           <p class="day">Day</p>
           <p class="date">Date</p>
         </div>
+
         <div class="weather">
           <div class="div-1">
-            <img class="weather-image" src="images/clouds.png" alt="weather icon" />
+            <img
+              class="weather-image"
+              src="images/clouds.png"
+              alt="Weather Icon"
+            />
+
             <p class="condition">Condition</p>
           </div>
+
           <div class="div-2">
             <p class="temperature">Temperature</p>
             <p class="location">Location</p>
@@ -51,91 +87,129 @@
             <p class="aqi">AQI</p>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Calculator -->
-      <div class="calculator-container main-cards">
-        <h1><i class="fa-solid fa-calculator"></i> Calculator</h1>
+      <!-- ========= CALCULATOR ========= -->
+      <section class="calculator-container main-cards">
+        <h1>
+          <i class="fa-solid fa-calculator"></i>
+          Calculator
+        </h1>
+
         <div class="input-box">
           <input id="input" type="text" placeholder="0" readonly />
         </div>
+
         <div class="button-box">
-          <!-- Buttons row-wise -->
+          <!-- Row 1 -->
           <button class="btn ac-btn" onclick="clearInput()">AC</button>
-          <button class="btn color-btn" onclick="backspace()"><i class="fa-solid fa-xmark"></i></button>
+          <button class="btn color-btn" onclick="backspace()">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
           <button class="btn color-btn" onclick="appendValue('^')">^</button>
           <button class="btn color-btn" onclick="appendValue('/')">/</button>
 
+          <!-- Row 2 -->
           <button class="btn" onclick="appendValue('7')">7</button>
           <button class="btn" onclick="appendValue('8')">8</button>
           <button class="btn" onclick="appendValue('9')">9</button>
           <button class="btn color-btn" onclick="appendValue('*')">*</button>
 
+          <!-- Row 3 -->
           <button class="btn" onclick="appendValue('4')">4</button>
           <button class="btn" onclick="appendValue('5')">5</button>
           <button class="btn" onclick="appendValue('6')">6</button>
           <button class="btn color-btn" onclick="appendValue('-')">-</button>
 
+          <!-- Row 4 -->
           <button class="btn" onclick="appendValue('1')">1</button>
           <button class="btn" onclick="appendValue('2')">2</button>
           <button class="btn" onclick="appendValue('3')">3</button>
           <button class="btn color-btn" onclick="appendValue('+')">+</button>
 
+          <!-- Row 5 -->
           <button class="btn" onclick="appendValue('Math.E')">e</button>
           <button class="btn" onclick="appendValue('0')">0</button>
           <button class="btn" onclick="appendValue('.')">.</button>
           <button class="btn equal-btn" onclick="calculate()">=</button>
         </div>
-      </div>
+      </section>
 
-      <!-- Expense Tracker -->
-      <div class="expense-container main-cards">
+      <!-- ========= EXPENSE TRACKER ========= -->
+      <section class="expense-container main-cards">
         <div class="total-expense">
-          <span class="span1">Total Expense</span>
-          <span class="span2">₹0</span>
+          <center>
+            <span class="expense-label">Total Expense</span>
+            <span class="expense-total">₹0</span>
+          </center>
         </div>
-        
-          <form id="expense-form">
-            <input type="text" id="title" placeholder="Eexpense title" required />
-            <div>
-              <input type="number" id="amount" placeholder="Amount" required />
-              <input type="date" id="date" required />
-            </div>
-            <button type="button" class="expense-add">+ Add</button>
-          </form>
+
+        <form id="expense-form">
+          <input type="text" id="title" placeholder="Expense Title" required />
+
+          <div class="expense-row">
+            <input type="number" id="amount" placeholder="Amount" required />
+            <input type="date" id="date" required />
+          </div>
+
+          <button type="button" class="expense-add">+ Add</button>
+        </form>
+
         <div class="expense-items">
           <p id="default-para">Add Expenses</p>
+
           <span class="material-symbols-outlined expense-icon">
-account_balance_wallet
-</span>
+            account_balance_wallet
+          </span>
         </div>
-    </div>
-    <!-- Notes -->
-      <div class="notes-container main-cards">
-        <h2>📝 Notes</h2>
+      </section>
+
+      <!-- ========= NOTES ========= -->
+      <section class="notes-container main-cards">
+        <center><h2>📝 Notes</h2></center>
+
         <div class="note-input">
-          <textarea id="noteText" placeholder="Write your note here..."></textarea>
+          <textarea
+            id="noteText"
+            placeholder="Write your note here..."
+          ></textarea>
+
           <button id="addNoteBtn">+ Add</button>
         </div>
-        <div class="notes-list">
-          <p id="default-note">Add Note</p>
-          <span class="material-symbols-outlined note-span">
-assignment
-</span>
-        </div>
-      </div>
+
+        <center>
+          <div class="notes-list">
+            <p id="default-note">Add Note</p>
+
+            <span class="material-symbols-outlined note-span">
+              assignment
+            </span>
+          </div>
+        </center>
+      </section>
     </main>
 
     <hr />
 
-    <!-- Footer -->
+    <!-- ================= FOOTER ================= -->
     <footer>
-      <a href="https://github.com/Arpit-Kumar-198" target="_blank"><i class="fa-brands fa-github github"></i></a> |
-      <a href="https://x.com/ArpitKumar43185" target="_blank"><i class="fa-brands fa-x-twitter x-twitter"></i></a> |
-      <a href="https://www.linkedin.com/in/arpit-kumar-569361296/" target="_blank"><i class="fa-brands fa-linkedin linkedin"></i></a>
+      <a href="https://github.com/Arpit-Kumar-198" target="_blank">
+        <i class="fa-brands fa-github github"></i>
+      </a>
+
+      <a href="https://x.com/ArpitKumar43185" target="_blank">
+        <i class="fa-brands fa-x-twitter x-twitter"></i>
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/arpit-kumar-569361296/"
+        target="_blank"
+      >
+        <i class="fa-brands fa-linkedin linkedin"></i>
+      </a>
+
       <p>&copy; 2025 Arpit Kumar. All rights reserved.</p>
     </footer>
-
     <!-- Scripts -->
     <script src="javascript/dark-mode.js"></script>
     <script src="javascript/weather.js"></script>
@@ -143,41 +217,45 @@ assignment
     <script src="javascript/expense-tarcker.js"></script>
     <script src="javascript/notes.js"></script>
     <script>
-      // Calculator 
-        let inputValue = "";
+      // Calculator
+      let inputValue = "";
 
-  function updateInput() {
-    document.querySelector("#input").value = inputValue;
-  }
+      function updateInput() {
+        const input = document.querySelector("#input");
+        input.value = inputValue;
 
-  function appendValue(val) {
-    if (inputValue === "Syntax Error") inputValue = "";
-    inputValue += val;
-    updateInput();
-  }
+        // Always show the latest characters
+        input.scrollLeft = input.scrollWidth;
+      }
 
-  function clearInput() {
-    inputValue = "";
-    updateInput();
-  }
+      function appendValue(val) {
+        if (inputValue === "Syntax Error") inputValue = "";
+        inputValue += val;
+        updateInput();
+      }
 
-  function backspace() {
-    if (inputValue === "Syntax Error") inputValue = "";
-    else inputValue = inputValue.slice(0, -1);
-    updateInput();
-  }
+      function clearInput() {
+        inputValue = "";
+        updateInput();
+      }
 
-  function calculate() {
-    try {
-      // Replace ^ with ** for exponentiation
-      let expression = inputValue.replace(/\^/g, "**");
-      let res = eval(expression).toString();
-      inputValue = res;
-    } catch (err) {
-      inputValue = "Syntax Error";
-    }
-    updateInput();
-  }
+      function backspace() {
+        if (inputValue === "Syntax Error") inputValue = "";
+        else inputValue = inputValue.slice(0, -1);
+        updateInput();
+      }
+
+      function calculate() {
+        try {
+          // Replace ^ with ** for exponentiation
+          let expression = inputValue.replace(/\^/g, "**");
+          let res = eval(expression).toString();
+          inputValue = res;
+        } catch (err) {
+          inputValue = "Syntax Error";
+        }
+        updateInput();
+      }
     </script>
   </body>
 </html>

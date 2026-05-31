@@ -1,105 +1,210 @@
+/* ==========================================
+   WEATHER COMPONENT
+   ========================================== */
+
 .weather-box {
+  width: 95%;
   min-width: 300px;
-  background-color: rgba(0,0,255,0.8);
+
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  width: 95%; 
-  box-sizing: border-box;
-  padding: 1rem;
+  flex-wrap: wrap;
+
+  padding: 1rem 2rem;
+
+  background-color: rgba(0, 0, 255, 0.8);
+
   border-radius: 1rem;
+
   margin-top: 2rem;
 }
 
-/* Day Time and Date styling  */
+/* ==========================================
+   DATE SECTION
+   ========================================== */
+
 .date-box {
-  padding: 2% 0 2% 5%;
-  color: rgb(255, 255, 255);
-  display: flex;
-  flex-direction: column;
-}
-.day{
-  font-family: "Bungee", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 2.5rem;
-}
-.time {
-  font-family: "Michroma", sans-serif;
-  font-weight: 200;
-  font-style: normal;
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-.date {
-  font-size: 1.5rem;
-}
-/* Weather section styling  */
-.weather {
-  color: rgb(255, 255, 255);
-  display: flex;
-  margin-right: 5%;
-}
-.div-1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  margin-right: 2rem;
+
+  color: #fff;
 }
+
+.time {
+  margin-bottom: 1rem;
+
+  font-family: "Michroma", sans-serif;
+  font-size: 3rem;
+  font-weight: 200;
+}
+
+.day {
+  font-family: "Bungee", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.date {
+  font-size: 1.5rem;
+}
+
+/* ==========================================
+   WEATHER SECTION
+   ========================================== */
+
+.weather {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  color: #fff;
+}
+
+/* ==========================================
+   ICON + CONDITION
+   ========================================== */
+
+.div-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather-image {
+  width: 11rem;
+  height: 11rem;
+
+  display: block;
+
+  animation: float 4s ease-in-out infinite;
+}
+
+.div-1 .condition {
+  margin-top: 1rem;
+
+  font-size: 1.5rem;
+
+  font-family: "Segoe UI", "Roboto", "Helvetica", sans-serif;
+
+  text-align: center;
+}
+
+/* ==========================================
+   WEATHER DETAILS
+   ========================================== */
+
 .div-2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
 }
-.div-1 .condition {
+
+.temperature {
+  margin-bottom: 1rem;
+
+  font-family: "Michroma", sans-serif;
+  font-size: 3rem;
+  font-weight: 200;
+}
+
+.location {
+  max-width: 250px;
+
+  font-family: "Bungee", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.humidity,
+.aqi {
   font-size: 1.5rem;
-  margin-top: 1rem;
-  font-family: 'Segoe UI', 'Roboto', 'Helvetica', sans-serif;
+
+  font-family: "Segoe UI", "Roboto", "Helvetica", sans-serif;
 }
-.weather-image {
-  height: 11rem;
-  width: 11rem;
-  animation: float 4s ease-in-out infinite;
-  display: block;
-  margin: auto;
-}
+
+/* ==========================================
+   FLOAT ANIMATION
+   ========================================== */
 
 @keyframes float {
   0% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
+
   50% {
     transform: translateY(-15px);
   }
+
   100% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
 }
-.temperature {
-  font-family: "Michroma", sans-serif;
-  font-weight: 200;
-  font-style: normal;
-  font-size: 3rem;
-  margin-bottom: 1rem;
+
+/* ==========================================
+   TABLET
+   ========================================== */
+
+@media screen and (max-width: 768px) {
+  .weather-box {
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .date-box {
+    text-align: center;
+  }
+
+  .weather {
+    justify-content: center;
+  }
 }
-.location {
-  font-size: 2rem; 
-  font-family: "Bungee", sans-serif;
-  font-weight: 400;
-  word-wrap: break-word;
-  max-width: 100%;
-  overflow-wrap: break-word;
-}
-.humidity, .aqi {
-  font-size: 1.5rem;
-  font-family: 'Segoe UI', 'Roboto', 'Helvetica', sans-serif;
-}
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
 @media screen and (max-width: 485px) {
+  .weather-box {
+    padding: 1rem;
+  }
+
+  .weather {
+    flex-direction: column;
+    gap: 1rem;
+
+    text-align: center;
+  }
+
+  .div-2 {
+    align-items: center;
+  }
+
+  .time {
+    font-size: 2.2rem;
+  }
+
+  .day {
+    font-size: 2rem;
+  }
+
+  .temperature {
+    font-size: 2.2rem;
+  }
+
   .location {
     font-size: 1.5rem;
+    max-width: 100%;
     text-align: center;
+  }
+
+  .weather-image {
+    width: 8rem;
+    height: 8rem;
   }
 }

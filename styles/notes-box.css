@@ -1,118 +1,202 @@
-.notes-container {    
+/* ==========================================
+NOTES COMPONENT
+========================================== */
+
+/* ==========================================
+NOTES CONTAINER
+========================================== */
+.notes-container {
   background-color: rgb(255, 196, 196);
 }
 
+/* ==========================================
+TITLE
+========================================== */
 .notes-container h2 {
+  margin-bottom: 1rem;
+
   font-family: "Michroma", sans-serif;
   font-size: 2rem;
   font-weight: 400;
-  font-style: normal;
-  margin-bottom: 1rem;
 }
+
+/* ==========================================
+INPUT SECTION
+========================================== */
 .note-input {
   width: 100%;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+
   margin-bottom: 1rem;
 }
 
 #noteText {
-  height: 4rem;
   width: 80%;
-  border-radius: 1rem;
+  height: 4rem;
+
   padding: 1rem;
+
   font-size: 1rem;
+
+  border-radius: 1rem;
+
   resize: none;
 }
 
+/* ==========================================
+ADD BUTTON
+========================================== */
 #addNoteBtn {
   width: 80%;
-  background-color: rgb(0,0,255);
-  color: #fff;
-  border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
-  font-size: 1.2rem;
-  margin: 1rem 0;
-  font-family: "Michroma", sans-serif;
-  cursor: pointer;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+
+  font-family: "Michroma", sans-serif;
+  font-size: 1.2rem;
+
+  color: #fff;
+
+  background-color: rgb(0, 0, 255);
+
+  border: none;
+  border-radius: 0.5rem;
+
+  cursor: pointer;
+
+  transition: all 0.15s ease;
 }
 
-#addNoteBtn:hover,
-.delete-note:hover {
-  background-color: rgb(0,0,230);
-  transform: translatey(-2px);
-  transition: all 0.1s ease-in-out;
+#addNoteBtn:hover {
+  background-color: rgb(0, 0, 230);
+  transform: translateY(-2px);
 }
 
+/* ==========================================
+NOTES LIST
+========================================== */
 .notes-list {
   width: 90%;
   height: 420px;
+
+  margin-top: 1rem;
+  padding: 1rem;
+
   display: flex;
   flex-direction: column;
-  padding: 1rem;
-  overflow-y: auto; 
-  margin-top: 1rem;
-  box-sizing: border-box;
   align-items: center;
   justify-content: flex-start;
+
+  overflow-y: auto;
 }
-.notes-list #default-note{
-  font-size: 1.5rem;
-  font-family: 'Segoe UI', 'Roboto', 'Helvetica', sans-serif;
-  font-weight: 400;
-  color: rgba(0,0,0,0.6);
+
+.notes-list #default-note {
   margin: 0.5rem;
+
+  font-size: 1.5rem;
+  font-weight: 400;
+
+  color: rgba(0, 0, 0, 0.6);
+
+  font-family: "Segoe UI", "Roboto", "Helvetica", sans-serif;
 }
-.notes-list .note-span{
+
+.notes-list .note-span {
   font-size: 3rem;
   font-weight: 400;
-  color: rgba(0,0,0,0.6);
+
+  color: rgba(0, 0, 0, 0.6);
 }
+
+/* ==========================================
+NOTE CARD
+========================================== */
 .note-card {
   width: 100%;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f8fafc;
-  border-radius: 0.5rem;
+
+  margin: 0.5rem 0;
   padding: 0.75rem;
-  margin: 0.5rem 0rem;
-  box-sizing: border-box;
-  border: 1px solid grey;;
-  font-family: 'Segoe UI', 'Roboto', 'Helvetica', sans-serif;
-}
 
-.note-card p {
-  font-size: 1.2rem;
-  word-break: break-word;
-  flex: 1;
-  margin-right: 1rem;
-}
+  background-color: #f8fafc;
 
-.delete-note {
-  background-color: rgb(255, 50, 0);
+  border: 1px solid grey;
   border-radius: 0.5rem;
-  color: #fff;
-  border: none;
-  outline: none;
+
+  font-family: "Segoe UI", "Roboto", "Helvetica", sans-serif;
+}
+
+/* ==========================================
+NOTE TEXT
+========================================== */
+.note-card p {
+  flex: 1;
+
+  margin-right: 1rem;
+
+  font-size: 1.2rem;
+
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* ==========================================
+DELETE BUTTON
+========================================== */
+.delete-note {
   padding: 0.5rem;
+
+  color: #fff;
+
+  background-color: rgb(255, 50, 0);
+
+  border: none;
+  border-radius: 0.5rem;
+
+  cursor: pointer;
+
+  transition: all 0.15s ease;
 }
 
 .delete-note:hover {
-  background-color: 
-  rgb(255, 0, 0);
+  background-color: rgb(255, 0, 0);
+  transform: translateY(-2px);
 }
 
-@media screen and (max-width:485px){
-  .notes-container{
+/* ==========================================
+MOBILE
+========================================== */
+@media screen and (max-width: 485px) {
+  .notes-container {
     width: 95%;
-    height: 540px;
     max-width: 380px;
+    height: 540px;
     max-height: 540px;
+  }
+
+  .notes-container h2 {
+    font-size: 1.6rem;
+  }
+
+  #noteText {
+    width: 90%;
+  }
+
+  #addNoteBtn {
+    width: 90%;
+  }
+
+  .note-card p {
+    font-size: 1rem;
   }
 }

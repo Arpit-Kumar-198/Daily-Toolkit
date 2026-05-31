@@ -1,73 +1,229 @@
+/* ==========================================
+CALCULATOR COMPONENT
+========================================== */
+
+/* ==========================================
+CALCULATOR CARD
+========================================== */
 .calculator-container {
-  background-color: rgb(255, 225, 196);
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
 }
+
+/* Decorative Background */
+.calculator-container::before {
+  content: "";
+
+  position: absolute;
+  top: -50%;
+  right: -50%;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+
+  background: radial-gradient(
+    circle,
+    rgba(251, 146, 60, 0.1) 0%,
+    transparent 70%
+  );
+}
+
+/* ==========================================
+CALCULATOR HEADING
+========================================== */
 .calculator-container h1 {
-  font-size: 2rem;
+  display: flex;
+  justify-content: center; /* Horizontal center */
+  align-items: center; /* Vertical center */
+  gap: var(--space-sm);
+
+  width: 100%;
+
+  margin-bottom: var(--space-lg);
   font-family: "Michroma", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  margin: 1rem 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+
+  color: var(--text-primary);
 }
-#input {
-  max-width: 400px;
+
+.calculator-container h1 i {
   font-size: 1.5rem;
-  border-radius: 1rem;
-  padding: 1rem;
-  margin: 1rem 0;    
+  color: var(--warning);
 }
+
+/* ==========================================
+INPUT SECTION
+========================================== */
+.input-box {
+  width: 100%;
+  max-width: 340px;
+
+  margin: 0 auto var(--space-lg);
+}
+
+#input {
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: "Inter", monospace;
+  text-align: right;
+  background: var(--bg-primary);
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm) inset;
+  transition: all var(--transition-base);
+
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+#input:focus {
+  outline: none;
+
+  border-color: var(--warning);
+
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+/* ==========================================
+BUTTON GRID
+========================================== */
 .button-box {
   width: 100%;
-  max-width: 380px;
-  height: auto;
-  margin: 1rem;
+  max-width: 340px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: var(--space-sm);
+}
+
+/* ==========================================
+COMMON BUTTON STYLE
+========================================== */
+.btn {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+
+  cursor: pointer;
+
+  font-family: "Inter", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+
+  color: var(--text-primary);
+
+  background: var(--bg-primary);
+
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-md);
+
+  box-shadow: var(--shadow-sm);
+
+  transition: all var(--transition-base);
 }
-.btn {
-  width: 20%;
-  max-width: 65px;
-  aspect-ratio: 1/1;
-  font-size: 1rem;
-  background-color: #fff;
-  margin: 0.5rem;
-  border-radius: 0.5rem;
-  font-family: "Michroma", sans-serif;
-  font-weight: 700;
-  border: none;
-}
+
 .btn:hover {
-  transform: translatey(-2px);
-  transition: all 0.1s ease-in-out;
+  transform: translateY(-2px);
+
+  border-color: var(--border-medium);
+
+  box-shadow: var(--shadow-md);
 }
+
+.btn:active {
+  transform: translateY(0);
+
+  box-shadow: var(--shadow-sm);
+}
+
+/* ==========================================
+OPERATOR BUTTONS
+========================================== */
 .color-btn {
-  background-color: rgba(255,165,0);
-  color: #fff;
+  color: white;
+
+  border-color: transparent;
+
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
 }
+
 .color-btn:hover {
-  background-color: rgb(255, 150, 0);
+  border-color: transparent;
+
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
 }
+
+/* ==========================================
+EQUAL BUTTON
+========================================== */
 .equal-btn {
-  background-color: rgb(0,0,255);
-  color: #fff;
+  color: white;
+
+  border-color: transparent;
+
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
 }
+
 .equal-btn:hover {
-  background-color: rgb(0,0,230);
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
 }
+
+/* ==========================================
+CLEAR BUTTON
+========================================== */
 .ac-btn {
-  background-color: rgb(255, 50, 0);
-  color: #fff;
+  color: white;
+
+  border-color: transparent;
+
+  background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
 }
+
 .ac-btn:hover {
-  background-color: rgb(255,0, 0);
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
 }
-@media screen and (max-width:485px) {
+
+/* ==========================================
+MOBILE
+========================================== */
+@media screen and (max-width: 485px) {
   .calculator-container {
-    height: auto;
-    padding: 0.5rem;
-    margin: 2rem 0;
-    max-width: 95%;
-    border-radius: 1rem;
+    width: 100%;
+    max-width: none;
+    padding: var(--space-md);
+    border-radius: var(--radius-xl);
+  }
+
+  .calculator-container h1 {
+    margin-bottom: var(--space-md);
+    font-size: 1.5rem;
+  }
+
+  .button-box {
+    max-width: 280px;
+    gap: var(--space-xs);
+  }
+
+  .btn {
+    font-size: 1rem;
+  }
+
+  #input {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 1.25rem;
   }
 }

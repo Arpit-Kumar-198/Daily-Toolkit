@@ -1,149 +1,227 @@
+/* ==========================================
+   EXPENSE TRACKER
+========================================== */
+
 .expense-container {
-  background-color: rgb(202, 201, 201);
+  background: #d6d6d6;
 }
+
+/* ==========================================
+   TOTAL EXPENSE
+========================================== */
+
 .total-expense {
-  width: 90%;
-  height: 8rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgb(0, 160, 0);
+  width: 100%;
+  min-height: 100px;
+
+  background: #00a000;
+
+  border-radius: 16px;
   padding: 1rem;
-  border-radius: 1rem;
-  box-sizing: border-box;
+
+  overflow: hidden;
+  overflow-x: scroll;
 }
-.total-expense .span1 {
-  font-size: 1rem;
+
+.expense-label {
   font-family: "Michroma", sans-serif;
-  font-weight: 400;
-  color: #fff;
+  color: white;
+  font-size: 1rem;
+
+  flex-shrink: 0;
 }
-.total-expense .span2 {
-  font-size: 2rem;
+
+.expense-total {
   font-family: "Bungee", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  color: #fff;
+  color: white;
+
+  font-size: 2rem;
+
+  text-align: right;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  white-space: nowrap;
+
+  scrollbar-width: thin;
 }
+
+/* ==========================================
+   FORM
+========================================== */
+
 #expense-form {
-  margin-top: 1rem;
+  width: 100%;
+
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  box-sizing: border-box;
+
+  gap: 12px;
+
+  margin-top: 1rem;
 }
+
 #expense-form input {
-  width: 90%;
-  height: 3rem;
-  border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
+  width: 100%;
+
+  height: 50px;
+
+  border: none;
+  border-radius: 10px;
+
+  padding: 0 1rem;
+
   font-size: 1rem;
-  margin: 0.5rem 0;
-  box-sizing: border-box;
-  outline: 1px solid grey;
-  border: none;
+
+  outline: 1px solid gray;
 }
-#expense-form div {
+
+.expense-row {
+  width: 100%;
+
   display: flex;
-  align-items: center;
-  justify-content: center;
+  gap: 12px;
 }
-#expense-form div input {
-  margin: 0.5rem 1rem;
-  border: none;
+
+.expense-row input {
+  flex: 1;
 }
+
 .expense-add {
-  width: 90%;
-  background-color: rgb(0,0,255);
-  color: #fff;
-  border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
-  font-size: 1.2rem;
-  margin: 0.5rem 0;
-  font-family: "Michroma", sans-serif;
+  width: 100%;
+
+  height: 50px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: blue;
+  color: white;
+
   cursor: pointer;
+
+  font-family: "Michroma", sans-serif;
+  font-size: 1rem;
+
+  transition: 0.2s;
+}
+
+.expense-add:hover {
+  background: #0000e0;
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   LIST
+========================================== */
+
+.expense-items {
+  width: 100%;
+
+  height: 420px;
+
+  margin-top: 1rem;
+
+  overflow-y: auto;
+
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
-.expense-add:hover,
-.delete-btn:hover {
-  background-color: rgb(0,0,230);
-  transform: translatey(-2px);
-  transition: all 0.1s ease-in-out;
-}
-.expense-items {
-  width: 90%;
-  height: 420px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 1rem;
-  padding-right: 0.5rem;
-  box-sizing: border-box;
-}
-.expense-items #default-para{
+#default-para {
   font-size: 1.5rem;
-  font-family: 'Segoe UI', 'Roboto', 'Helvetica', sans-serif;
-  font-weight: 400;
-  color: rgba(0,0,0,0.6);
-  margin: 0.5rem;
+  color: rgba(0, 0, 0, 0.6);
 }
-.expense-items .material-symbols-outlined{
+
+.expense-icon {
   font-size: 3rem;
-  font-weight: 400;
-  color: rgba(0,0,0,0.6);
+  color: rgba(0, 0, 0, 0.6);
 }
+
+/* ==========================================
+   EXPENSE CARD
+========================================== */
+
 .expense-info {
+  width: 100%;
+
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  width: 100%;
+  align-items: flex-start;
+
+  gap: 12px;
+
+  padding: 12px;
+
+  margin: 8px 0;
+
   background: #f5f5f5;
-  border-radius: 0.5rem;
-  padding: 0.75rem;
-  margin: 0.5rem 0rem;
-  box-sizing: border-box;
-  border: 1px solid grey;
-  font-family: 'Segoe UI', 'Roboto', 'Helvetica', sans-serif;
+
+  border: 1px solid gray;
+  border-radius: 10px;
 }
+
+/* left */
+
+.expense-info .div1 {
+  flex: 1;
+  min-width: 0;
+}
+
 .expense-info .div1 #p1 {
-  margin: 0.5rem 0;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
+
 .expense-info .div1 #p2 {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
 }
+
+/* right */
+
 .expense-info .div2 {
   display: flex;
-  justify-content: space-between;
-  font-size: 1.2rem;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
 }
+
 .expense-info .div2 p {
- margin: 0 0.5rem;
+  max-width: 180px;
+
+  overflow-x: auto;
+  white-space: nowrap;
+
+  padding-bottom: 2px;
 }
-.expense-info .div2 .delete-btn {
-  background-color: rgb(255, 50, 0);
-  border-radius: 0.5rem;
-  color: #fff;
+
+.delete-btn {
   border: none;
-  outline: none;
+
+  background: red;
+  color: white;
+
+  border-radius: 8px;
+
   padding: 0.5rem;
+
+  cursor: pointer;
 }
-.expense-info .div2 .delete-btn:hover {
-  background-color: 
-  rgb(255, 0, 0);
-}
-@media screen and (max-width:485px){
-  .expense-container{
-    width: 95%;
-    height: 540px;
-    max-width: 380px;
-    max-height: 540px;
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 485px) {
+  .expense-row {
+    flex-direction: column;
+  }
+
+  .expense-total {
+    font-size: 1.5rem;
   }
 }
