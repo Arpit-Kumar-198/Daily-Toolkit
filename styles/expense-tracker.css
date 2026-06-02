@@ -220,6 +220,10 @@
   .expense-row {
     flex-direction: column;
   }
+  .expense-row #date,
+  .expense-row #amount {
+    padding: 8px;
+  }
 
   .expense-total {
     font-size: 1.5rem;

@@ -121,7 +121,7 @@ COMMON BUTTON STYLE
   cursor: pointer;
 
   font-family: "Inter", sans-serif;
-  font-size: 1.125rem;
+  font-size: 1.5rem;
   font-weight: 600;
 
   color: var(--text-primary);

@@ -104,7 +104,7 @@
           <!-- Row 1 -->
           <button class="btn ac-btn" onclick="clearInput()">AC</button>
           <button class="btn color-btn" onclick="backspace()">
-            <i class="fa-solid fa-xmark"></i>
+            <i class="fa-solid fa-delete-left"></i>
           </button>
           <button class="btn color-btn" onclick="appendValue('^')">^</button>
           <button class="btn color-btn" onclick="appendValue('/')">/</button>
@@ -210,7 +210,7 @@
 
       <p>&copy; 2025 Arpit Kumar. All rights reserved.</p>
     </footer>
-    <!-- Scripts -->
+    <!-- ================= SCRIPTS ================= -->
     <script src="javascript/dark-mode.js"></script>
     <script src="javascript/weather.js"></script>
     <script src="javascript/dayTimeDate.js"></script>
@@ -241,7 +241,7 @@
 
       function backspace() {
         if (inputValue === "Syntax Error") inputValue = "";
-        else inputValue = inputValue.slice(0, -1);
+        else inputValue = inputValue.slice(0, inputValue.length - 1);
         updateInput();
       }
 
